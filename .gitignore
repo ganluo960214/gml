@@ -1,0 +1,10 @@
+# IDE and editor
+
+*.iml
+*.ipr
+*.iws
+
+# build out
+
+gml.exe
+gml
