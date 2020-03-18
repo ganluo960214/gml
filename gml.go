@@ -57,12 +57,13 @@ func init() {
 flags usage
 */
 func usage() {
-	log.Println("usage: gml -type=GoPlayGround -file-name-type=low_case")
+
+	log.Println("usage: go:generate gml -type=example -file-name=u_can_set_file_name_or_by_default__-type_gml.go")
 	log.Println("")
 	log.Println("-type data type")
 	log.Println("\t data type,must be set")
-	log.Println("-file-name file name, generated file name, default as type name")
-	log.Println("\t : when generate new file will use -type value, GoPlayGround.go")
+	log.Println("-file-name file name, generated file name, default as \"-type_gml.go\" ")
+	log.Println("\t save generate file name. if not set will use \"-type_gml.go\".")
 }
 
 /*
