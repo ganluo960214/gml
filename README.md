@@ -27,7 +27,7 @@ type example byte
 
 const (
 	ErrCode200 example = 0 // request ok
-	ErrCode400 example = 1 // request not found
+	ErrCode404 example = 1 // request not found
 	ErrCode500 example = 2 // request failed
 )
 ```
@@ -43,10 +43,10 @@ package main
 
 var (
 	exampleMapper = map[example]string{ 
-		ErrCode200:"request ok",ErrCode400:"request not found",ErrCode500:"request failed",
+		ErrCode200:"request ok",ErrCode404:"request not found",ErrCode500:"request failed",
 	}
 	exampleList = []example{
-		ErrCode200,ErrCode400,ErrCode500,
+		ErrCode200,ErrCode404,ErrCode500,
 	}
 )
 ```
