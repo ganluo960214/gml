@@ -172,7 +172,7 @@ func main() {
 	if flags.FileName != "" {
 		fileName = flags.FileName
 	}
-	if err := ioutil.WriteFile(fileName, b.Bytes(), 0644);err != nil {
+	if err := ioutil.WriteFile(fileName, b.Bytes(), 0644); err != nil {
 		log.Fatal(err)
 	}
 
