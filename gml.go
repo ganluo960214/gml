@@ -31,14 +31,6 @@ var (
 )
 
 /*
-flags default
-*/
-const (
-	flagTypeDefault = ""
-	flagFileName    = ""
-)
-
-/*
 flags
 */
 var (
@@ -49,21 +41,20 @@ var (
 )
 
 func init() {
-	flag.StringVar(&flags.Type, "type", flagTypeDefault, "type name; must be set")
-	flag.StringVar(&flags.FileName, "file-name", "", "file type name; enum; 'low_case','camel-case','same-as-type'") // flag -file-name-type
+	flag.StringVar(&flags.Type, "type", "", "type name; must be set")
+	flag.StringVar(&flags.FileName, "file-name", "", "newly generated file name; default as \"-type_gml.go\"") // flag -file-name-type
 }
 
 /*
 flags usage
 */
 func usage() {
-
 	log.Println("usage: go:generate gml -type=example -file-name=u_can_set_file_name_or_by_default__-type_gml.go")
 	log.Println("")
 	log.Println("-type data type")
 	log.Println("\t data type,must be set")
-	log.Println("-file-name file name, generated file name, default as \"-type_gml.go\" ")
-	log.Println("\t save generate file name. if not set will use \"-type_gml.go\".")
+	log.Println("-file-name newly generated file name, default as \"-type_gml.go\" ")
+	log.Println("\t file name of the generated file")
 }
 
 /*

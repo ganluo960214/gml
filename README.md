@@ -7,9 +7,9 @@ generate mapper and list from type and type cost
 usage: go:generate gml -type=example -file-name=u_can_set_file_name_or_by_default__-type_gml.go
 
 -type data type
-	 data type,must be set
--file-name file name, generated file name, default as "-type_gml.go" 
-	 save generate file name. if not set will use "-type_gml.go".
+    data type,must be set
+-file-name newly generated file name, default as "-type_gml.go"
+    file name of the generated file
 ```
 
 ## usage
