@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/go-playground/validator/v10"
 	"go/ast"
+	"go/format"
 	"go/parser"
 	"go/token"
 	"io/ioutil"
@@ -164,7 +165,13 @@ func main() {
 	if flags.FileName != "" {
 		fileName = flags.FileName
 	}
-	if err := ioutil.WriteFile(fileName, b.Bytes(), 0644); err != nil {
+
+	content, err := format.Source(b.Bytes())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := ioutil.WriteFile(fileName, content, 0644); err != nil {
 		log.Fatal(err)
 	}
 
